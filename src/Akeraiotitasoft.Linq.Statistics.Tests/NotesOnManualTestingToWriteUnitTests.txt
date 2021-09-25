@@ -1,0 +1,140 @@
+﻿In order to write unit tests they should be hand verified and hand coded
+So some of the percentiles are calculated where it makes sense and some are skipped logically.
+
+For the InversePercentileTests:
+
+Given this list of elements:
+1
+10
+2
+99
+-10
+1000
+55
+5
+7
+(total 9 elements)
+
+Sort them:
+-10
+1
+2
+5
+7
+10
+55
+99
+1000
+(total 9 elements sorted)
+
+0.0013 * 9 = 0.0117
+Floor it
+0
+zero based index at 0 is -10
+
+0.0228 * 9 = 0.2052
+Floor it
+0
+zero based index at 0 is -10
+
+0.1587 * 9 = 1.4283
+Floor it
+1
+zero based index at 1 is 1
+
+0.5 * 9 = 4.5
+Floor it
+4
+zero based index at 4 is 7
+
+0.75 * 9 = 6.75
+Floor it
+6
+zero based index at 6 is 55
+
+0.8413 * 9 = 7.5717
+Floor it
+7
+zero based index at 7 is 99
+
+0.90 * 9 = 8.1
+Floor it
+8
+zero based index at 8 is 1000
+
+----------------------------------
+
+Given this list of elements:
+0.34
+34.545
+234.253
+11.24
+-1234.12
+234234.3
+234.2
+4534.3
+454.3
+11.55
+93.23
+(total 11 elements)
+
+Sort them:
+-1234.12
+0.34
+11.24
+11.55
+34.545
+93.23
+234.2
+234.253
+454.3
+4534.3
+234234.3
+(total 11 elements sorted)
+
+0.0013 * 11 = 0.0143
+Floor it
+0
+zero based index at 0 is -1234.12
+
+0.0228 * 11 = 0.2508
+Floor it
+0
+zero based index at 0 is -1234.12
+
+0.1587 * 11 = 1.7457
+Floor it
+1
+zero based index at 1 is 0.34
+
+0.5 * 11 = 5.5
+Floor it
+5
+zero based index at 5 is 93.23
+
+0.75 * 11 = 8.25
+Floor it
+8
+zero based index at 8 is 454.3
+
+0.8413 * 11 = 9.2543
+Floor it
+9
+zero based index at 9 is 4534.3
+
+0.90 * 11 = 9.9
+Floor it
+9
+zero based index at 9 is 4534.3
+
+0.95 * 11 = 10.45
+Floor it
+10
+zero based index at 10 is 234234.3
+
+------------------
+
+For the StandardDeviationTests and SampleStandardDeviationTests:
+
+Used calculator soup to calculate the standard deviation
+https://www.calculatorsoup.com/calculators/statistics/statistics.php
